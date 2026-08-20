@@ -1,0 +1,28 @@
+{
+  "name": "wechat-mac",
+  "version": "1.0.0",
+  "description": "微信读书 macOS 客户端",
+  "main": "main.js",
+  "author": "wechat-mac",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac dmg"
+  },
+  "devDependencies": {
+    "electron": "^36.3.2",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.local.wechatreader",
+    "productName": "微信读书",
+    "mac": {
+      "category": "public.app-category.books",
+      "icon": "icon.icns",
+      "target": ["dmg"],
+      "artifactName": "微信读书-${version}-${arch}.dmg"
+    },
+    "dmg": { "title": "微信读书" },
+    "files": ["main.js", "preload.js", "icon.icns"]
+  }
+}
